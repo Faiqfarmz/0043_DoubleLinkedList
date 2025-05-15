@@ -71,6 +71,6 @@ void addNode()
         //Insert last mode
         if (current->next != NULL)
             current->next->prev = newNode; //step 9c
-        
+    current->next = newNode; // step 9d: current.next = newNode
     }
 };
