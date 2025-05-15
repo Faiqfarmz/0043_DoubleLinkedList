@@ -53,7 +53,7 @@ void addNode()
 
         // Insert in bertween mode
         // step 8: location potition fot insertion
-        Node *curren = START;
+        Node *current = START;
         while (current->next !=NULL && current->next->noMhs < nim)
         {
             current = current->next;
@@ -72,5 +72,22 @@ void addNode()
         if (current->next != NULL)
             current->next->prev = newNode; //step 9c
     current->next = newNode; // step 9d: current.next = newNode
+    }
+
+    void hapus()
+    {
+        if (START == NULL)
+        {
+            cout << "\nList is empty" << endl;
+            return;
+        }
+
+        cout << "\nENter the roll number of the student whose record is to be deleted: ";
+        int rollNo;
+        cin >> rollNo;
+
+        Node *current = START;
+
+
     }
 };
