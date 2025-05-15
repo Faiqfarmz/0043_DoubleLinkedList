@@ -119,5 +119,14 @@ void addNode()
         delete currrent;
         cout << "Recod with roll number" << rollNo << " deleted " << endl;
     }
-    
+
+    void traverse()
+    {
+        if (START == NULL)
+        {
+            cout << "\nList is empty" << endl;
+            return;
+        }
+        
+    }
 };
