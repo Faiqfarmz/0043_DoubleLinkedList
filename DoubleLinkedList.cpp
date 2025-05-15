@@ -64,6 +64,13 @@ void addNode()
             cout << "\nDuplicate roll number not allowed" << endl;
             return;
         }
+        //step 9: Insert between current and current->next
+        newNode->next = current->next;//step 9a
+        newNode->prev = current; //step 9b
 
+        //Insert last mode
+        if (current->next != NULL)
+            current->next->prev = newNode; //step 9c
+        
     }
 };
