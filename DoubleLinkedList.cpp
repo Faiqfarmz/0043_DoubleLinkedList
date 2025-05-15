@@ -131,6 +131,14 @@ void addNode()
         // step 1: Mark first node as currentNode
         Node *currentNode = START;
 
+        // step 2: Repeat untill currentNodde == NULL
+        cout << "\nRecords is ascending order of roll number are:\n";
+        int i= 0;
+        while (currentNode != NULL)
+        {
+            
+            cout << i + i << ". " << currentNode->noMhs << " " << endl;
+        }
         
     }
 };
