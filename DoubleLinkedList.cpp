@@ -109,12 +109,15 @@ void addNode()
             // step 3: Link previous node to next of current
             current->prev->next = current->prev;
 
-            // step 4: if current is not the last mode
+            // step 4: if current is not the last node
             if (current->next != NULL)
                 current-> next->prev = current->prev;
-                
+
         }
 
-
+        // step 5: Delete the node
+        delete currrent;
+        cout << "Recod with roll number" << rollNo << " deleted " << endl;
     }
+    
 };
