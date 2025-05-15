@@ -138,6 +138,10 @@ void addNode()
         {
             
             cout << i + i << ". " << currentNode->noMhs << " " << endl;
+
+            // step 3:  Move to next node
+            currentNode = currentNode->next;
+            i++;
         }
         
     }
