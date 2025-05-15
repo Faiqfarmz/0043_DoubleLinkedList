@@ -108,7 +108,13 @@ void addNode()
         {
             // step 3: Link previous node to next of current
             current->prev->next = current->prev;
+
+            // step 4: if current is not the last mode
+            if (current->next != NULL)
+                current-> next->prev = current->prev;
+                
         }
+
 
     }
 };
