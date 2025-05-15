@@ -36,7 +36,7 @@ void addNode()
                 cout << "\nDuplicate number not allowed" << endl;
                 return;
             }
-            //step: newNode.next = START
+            //step 4: newNode.next = START
             newNode-> next = START;
 
             //step 5: start. prev = newNode (if start exist)
@@ -50,6 +50,20 @@ void addNode()
             START = newNode;
             return;
         }
-        
+
+        // Insert in bertween mode
+        // step 8: location potition fot insertion
+        Node *curren = START;
+        while (current->next !=NULL && current->next->noMhs < nim)
+        {
+            current = current->next;
+        }
+
+        if (current-> next !=NULL && nim == current->next->noMhs)
+        {
+            cout << "\nDuplicate roll number not allowed" << endl;
+            return;
+        }
+
     }
 };
