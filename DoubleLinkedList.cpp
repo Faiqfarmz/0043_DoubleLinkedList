@@ -100,7 +100,7 @@ void addNode()
         // step 2: if node is at the beginning
         if ( current == START)
         {
-            START = curren->next; // step 2a: START = START.next
+            START = current->next; // step 2a: START = START.next
             if (START != NULL)
                 START->prev = NULL; //step 2b: START.prev = NULL
         }
@@ -144,14 +144,107 @@ void addNode()
             i++;
         }
 
-        void revtraverse()
+    void revTraverse();
+        {
+    
+            if (START == NULL)
+            {
+                cout << "\nList is empty" << endl;
+                return;
+            }
+
+            // step 1: Move to last mode
+            Node *currentNode = START;
+            int i = 0;
+            while ( currentNode-> next != NULL){
+                currentNode = currentNode-> next;
+                i++;
+            }  
+
+            cout << "\nRecord in descending oreder of roll number are: \n";
+            while (currentNode != NULL)
+            {
+                cout << i + 1 << ". " << currentNode -> noMhs << " " << endl;
+                currentNode = currentNode -> prev;
+                i++;
+            } 
+        }
+
+        void searchData();
         {
             if (START == NULL)
             {
                 cout << "\nList is empty" << endl;
                 return;
             }
-        }
-        
+            int rollNo;
+            cout << "\nEnter the roll number to search: ";
+            cin >> rollNo;
+
+            Node *current = START;
+
+            //step 1: Taverse to find matching roll number
+            while (current != NULL && current->noMhs != rollNo)
+                current = current->next;
+
+            //step 2:vOutput result
+            if (current == NULL)
+            {
+                cout << " Record no found\n";
+            }
+            else
+            {
+                cout << "Record no found\n";
+                cout << "Roll Number: " << current->noMhs << endl;
+            }
     }
+};
+
+int main()
+{
+    DoubleLinkedList list;
+    char choice;
+
+    do 
+    {
+
+        cout << "\nMenu:\n";
+        cout << "1. Add Record\n";
+        cout << "2. Delete Record\n";
+        cout << "3. view Ascending\n";
+        cout << "4. view Descending\n";
+        cout << "5. Search Record\n";
+        cout << "6. exit\n";
+        cout << "Enter the Number: ";
+        cin >> choice;
+    } while ();
+
+    switch (choice)
+    {
+        case '1':
+            list.addNode();
+            break;
+        case '2':
+            list.hapus();
+            break;
+        case '3':
+            list.traverse();
+            break;
+        case '4':
+            list.revTraverse();
+            break;
+        case '5':
+            list.searchData();
+            break;
+        case '6':
+            return 0;
+        default:
+            cout << "Invalid Option\n";
+    }
+    cout << "\n Press enter tp coutinue...";
+    cin.ignore();
+    cin.get();
+    cout << endl;
+    system("clear");
+    };
 };
