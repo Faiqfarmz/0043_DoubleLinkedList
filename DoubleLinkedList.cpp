@@ -42,6 +42,11 @@ void addNode()
             //step 5: start. prev = newNode (if start exist)
             if (START != NULL)
                 START->prev = newNode;
+
+            //step 6: newNode.prev = NULL
+            newNode->prev = NULL;
+
+            
         }
     }
 };
