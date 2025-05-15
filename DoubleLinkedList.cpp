@@ -105,6 +105,10 @@ void addNode()
                 START->prev = NULL; //step 2b: START.prev = NULL
         }
         else
+        {
+            // step 3: Link previous node to next of current
+            current->prev->next = current->prev;
+        }
 
     }
 };
